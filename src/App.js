@@ -1,9 +1,17 @@
-import React from 'react';
+import React from 'react'
+import { DndProvider } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
+import GlobalStyle from './styles/global'
+import Header from './components/Header'
+import Board from './components/Board'
 
 export default function App() {
-  return( 
-    <div style={{ display: 'flex', width: '100%', height: '100vh', justifyContent: 'center', alignItems: 'center' }}>
-      <h1>Pipefy Template</h1>
-    </div>
+  return(
+    <DndProvider backend={HTML5Backend}>
+      <GlobalStyle />
+      <Header/>
+      <Board />
+    </DndProvider>
   )
 }
